@@ -2,7 +2,7 @@
 
 Firstly, you have to install composer [here](https://getcomposer.org/).
 
-I use guzzle
+I use guzzle to make this request
 
 ### To use it :
 
