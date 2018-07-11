@@ -58,6 +58,16 @@ function makePositionReading($client, $longitude, $latitude, $date, $id_containe
     postRequest($client, $sub_url_owner, $owner);
 }
 
+function getPositionReading($client, $id_container) {
+    /* Add position */
+    $owner = [
+        'id' =>  $id_container,
+    ];
+    $sub_url_owner='org.magma.max.Container' ;
+    $res = getRequest($client, $sub_url_owner, $owner);
+    return $res;
+}
+
 function test() {
     $client = new Client(['base_uri' => 'http://ec2-34-247-38-3.eu-west-1.compute.amazonaws.com:3000/api/']);
 
@@ -121,6 +131,8 @@ function test() {
     postRequest($client, $sub_url_container, $container);
 
     makePositionReading($client, 3.0862800, 45.7796600, 100000, 'CONT_001');
+
+    getPositionReading($client, 'CONT_001');
 }
 
 ?>
